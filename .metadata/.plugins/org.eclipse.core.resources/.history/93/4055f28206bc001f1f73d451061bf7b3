@@ -1,0 +1,51 @@
+package com.vieira.infracciones_service.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.vieira.infracciones_service.entity.Infraccion;
+import com.vieira.infracciones_service.repository.InfraccionRepository;
+import com.vieira.infracciones_service.service.InfraccionService;
+
+@Service
+public class InfraccionServiceImpl implements InfraccionService {
+
+	@Autowired
+	private InfraccionRepository repository;
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Infraccion> findAll(Pageable page) {
+		
+	}
+
+	@Override
+	public Infraccion findByDni(String dni, Pageable page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Infraccion findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Infraccion save(Infraccion obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}
