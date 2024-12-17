@@ -8,7 +8,7 @@ import com.vieira.infracciones_service.entity.Infraccion;
 
 public interface InfraccionService {
 	public List<Infraccion> findAll(Pageable page);
-	public Infraccion findByDni(String dni,Pageable page);
+	public List<Infraccion> findByDni(String dni, Pageable page);
 	public Infraccion findById(int id);
 	public Infraccion save(Infraccion obj);
 	public boolean delete(int id);

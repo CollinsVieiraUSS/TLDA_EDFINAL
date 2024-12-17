@@ -36,11 +36,11 @@ public class InfraccionServiceImpl implements InfraccionService {
 	}
 
 	@Override
-	public Infraccion findByDni(String dni, Pageable page) {
+	@Transactional
+	public List<Infraccion> findByDni(String dni, Pageable page) {
 		try {
-			Infraccion data = repository.findByDni(dni);
+			List<Infraccion> data = repository.findByDni(dni,page);
 			return data;
-
 		} catch (ValidateServiceException | NoDataFoundException e) {
 			throw e;
 		} catch (Exception e) {
@@ -50,6 +50,7 @@ public class InfraccionServiceImpl implements InfraccionService {
 	}
 
 	@Override
+	@Transactional
 	public Infraccion findById(int id) {
 		try {
 			Infraccion data = repository.findById(id)
@@ -64,6 +65,7 @@ public class InfraccionServiceImpl implements InfraccionService {
 	}
 
 	@Override
+	@Transactional
 	public Infraccion save(Infraccion obj) {
 		try {
 			InfraccionValidator.save(obj);
@@ -90,6 +92,7 @@ public class InfraccionServiceImpl implements InfraccionService {
 	}
 
 	@Override
+	@Transactional
 	public boolean delete(int id) {
 		try {
 			Infraccion data = findById(id);

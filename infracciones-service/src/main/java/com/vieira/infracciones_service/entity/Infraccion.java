@@ -25,7 +25,7 @@ public class Infraccion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name="dni",unique = true,nullable = false, length=8)
+	@Column(name="dni", nullable = false, length=8)
 	private String dni;
 	@Column(name="fecha",nullable = false, length=64)
 	private Date fecha;
